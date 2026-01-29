@@ -26,6 +26,24 @@ body {
   overflow-x: hidden;
 }
 
+/* Ocultar scroll vertical de la página y hacerlo delgado si aparece */
+::-webkit-scrollbar {
+  width: 4px; /* Súper delgado */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-gris-claro);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(211, 47, 47, 0.3); /* Rojo tenue */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(211, 47, 47, 0.5);
+}
+
 /* Header Simplificado: Logo centrado, iconos a la derecha */
 .header {
   position: fixed;
@@ -255,6 +273,11 @@ body {
   overflow-x: auto;
   scroll-behavior: smooth;
   padding: 0 2rem;
+}
+
+/* Ocultar scroll horizontal en el slider */
+.products-grid::-webkit-scrollbar {
+  display: none; /* Oculta la barra */
 }
 
 .product-card {
