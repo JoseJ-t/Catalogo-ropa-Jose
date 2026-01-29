@@ -54,66 +54,80 @@ header {
 }
 
 .header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.8rem;
 }
 
 .logo {
-  max-width: 55px !important;
-  max-height: 55px !important;   /* ← clave si es cuadrado o casi */
-  object-fit: contain;
-  padding: 0;
-  margin: 8px auto 12px;         /* valores pequeños en px para precisión */
-}
-
-.header-inner {
-  gap: 0.4rem !important;        /* reduce aún más el espacio entre elementos */
+  max-width: 60px;
+  flex-shrink: 0;
 }
 
 .brand-name {
-  margin-top: 0;
-}
-
-.brand-name h1 {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-  font-weight: 700;
-  color: var(--color-blanco);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  margin: 0.3rem 0;                 /* ← menos espacio arriba/abajo */
-}
-
-.brand-name p {
-  font-size: clamp(0.8rem, 2vw, 1rem);
-  color: #cccccc;
-  margin: 0.2rem 0;                 /* ← reducido */
+  flex: 1;
+  text-align: center;
+  min-width: 180px;
 }
 
 .social-links {
-  display: flex;
-  gap: 1.2rem;
+  flex-shrink: 0;
+  gap: 1rem;
 }
 
-.social-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: var(--color-blanco);
-  transition: var(--transition);
-}
+/* Móvil */
+@media (max-width: 768px) {
+  header {
+    padding: 0.7rem 1rem;
+    clip-path: none;
+  }
 
-.social-link:hover {
-  transform: scale(1.2) rotate(10deg);
-}
+  .header-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem;
+  }
 
-.social-icon {
-  width: 20px;
-  height: 20px;
-  margin-bottom: 0.3rem;
+  .logo {
+    max-width: 50px;
+    margin: 0;
+  }
+
+  .brand-name {
+    text-align: left;
+    flex: 1 1 auto;
+  }
+
+  .brand-name h1 {
+    font-size: 1.6rem;
+    margin: 0;
+  }
+
+  .brand-name p {
+    font-size: 0.75rem;
+    margin: 2px 0 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .social-links {
+    flex-direction: row;
+    gap: 1.2rem;
+    margin: 0;
+  }
+
+  .social-text {
+    display: none; /* solo íconos */
+  }
+
+  .social-icon {
+    width: 26px;
+    height: 26px;
+  }
 }
 
 .social-text {
