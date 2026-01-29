@@ -4,7 +4,7 @@
   --color-negro: #000000;
   --color-blanco: #ffffff;
   --shadow-dark: 0 4px 20px rgba(0, 0, 0, 0.3);
-  --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Más agresivo */
+  --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 * {
@@ -18,7 +18,7 @@ body {
   background: var(--color-negro);
   color: var(--color-blanco);
   line-height: 1.5;
-  overflow-x: hidden; /* Evita scroll horizontal */
+  overflow-x: hidden;
 }
 
 /* Animaciones de entrada agresivas */
@@ -45,7 +45,7 @@ header {
   top: 0;
   z-index: 100;
   box-shadow: var(--shadow-dark);
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); /* Forma irregular */
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
 }
 
 .header-inner {
@@ -60,7 +60,7 @@ header {
 .logo {
   max-width: 80px;
   height: auto;
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); /* Brillo blanco */
+  filter: brightness(1.2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)); /* Iluminado para resaltar blanco y rojo */
 }
 
 .brand-name h1 {
@@ -104,6 +104,39 @@ header {
   opacity: 0.9;
 }
 
+/* Móvil: header apilado para que no se corte */
+@media (max-width: 768px) {
+  header {
+    padding: 1rem;
+    clip-path: none; /* Sin forma irregular en móvil para simplicidad */
+  }
+  .header-inner {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  .logo {
+    max-width: 60px;
+  }
+  .brand-name h1 {
+    font-size: 1.8rem;
+  }
+  .brand-name p {
+    font-size: 0.9rem;
+  }
+  .social-links {
+    gap: 1rem;
+    justify-content: center;
+  }
+  .social-icon {
+    width: 18px;
+    height: 18px;
+  }
+  .social-text {
+    font-size: 0.7rem;
+  }
+}
+
 /* Sección Sobre Nativo con overlay */
 .about {
   position: relative;
@@ -122,7 +155,7 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.4) contrast(1.2); /* Oscurecida para overlay */
+  filter: brightness(0.4) contrast(1.2);
 }
 
 .about-overlay {
@@ -135,7 +168,7 @@ header {
   z-index: 10;
   max-width: 600px;
   padding: 2rem;
-  background: rgba(211, 47, 47, 0.8); /* Overlay rojo semi-transparente */
+  background: rgba(211, 47, 47, 0.8);
   border-radius: 10px;
   box-shadow: var(--shadow-dark);
 }
@@ -202,7 +235,7 @@ header {
   overflow: hidden;
   box-shadow: var(--shadow-dark);
   transition: var(--transition);
-  transform: rotate(-2deg); /* Ligero tilt */
+  transform: rotate(-2deg);
 }
 
 .product-card:hover {
