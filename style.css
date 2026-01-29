@@ -20,15 +20,15 @@ body {
   line-height: 1.5;
 }
 
-/* Header compacto */
+/* Header blanco con texto negro */
 header {
-  background: var(--color-negro);
+  background: var(--color-blanco);
   padding: 0.8rem 1.5rem;
   position: sticky;
   top: 0;
   z-index: 100;
   box-shadow: var(--shadow-light);
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .header-inner {
@@ -43,7 +43,7 @@ header {
 .logo {
   max-width: 70px;
   height: auto;
-  /* Sin filtro: muestra el logo original con rojo */
+  /* Logo en colores originales */
 }
 
 .brand-name {
@@ -55,13 +55,13 @@ header {
 .brand-name h1 {
   font-size: clamp(1.2rem, 3vw, 2rem);
   font-weight: 700;
-  color: var(--color-blanco);
+  color: var(--color-negro);
   margin-bottom: 0.1rem;
 }
 
 .brand-name p {
   font-size: clamp(0.75rem, 1.5vw, 0.85rem);
-  color: #cccccc;
+  color: #666666;
   font-weight: 300;
 }
 
@@ -75,7 +75,7 @@ header {
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  color: var(--color-blanco);
+  color: var(--color-negro);
   transition: var(--transition);
 }
 
@@ -86,7 +86,7 @@ header {
 .social-icon {
   width: 18px;
   height: 18px;
-  /* Sin filtro: iconos en colores originales (WhatsApp verde, etc.) */
+  /* Iconos en colores originales */
   margin-bottom: 0.2rem;
 }
 
@@ -94,10 +94,10 @@ header {
   font-size: 0.7rem;
   font-weight: 400;
   opacity: 0.8;
-  color: var(--color-blanco);
+  color: var(--color-negro);
 }
 
-/* Panel: Sobre Nativo con imagen de la Basílica */
+/* Panel: Sobre Nativo (texto izquierda, iglesia derecha) */
 .about {
   background: #fafafa;
   padding: 3rem 1.5rem;
@@ -124,12 +124,8 @@ header {
   background: var(--color-rojo);
 }
 
-.about-image {
-  width: 250px;
-  height: auto;
-  border-radius: 0;
-  object-fit: cover;
-  box-shadow: var(--shadow-light);
+.about-text {
+  flex: 1;
 }
 
 .about-text h2 {
@@ -143,10 +139,17 @@ header {
   font-size: 1.1rem;
   color: #555555;
   line-height: 1.7;
-  max-width: 500px;
 }
 
-/* Móvil para about */
+.about-image {
+  width: 250px;
+  height: auto;
+  border-radius: 0;
+  object-fit: cover;
+  box-shadow: var(--shadow-light);
+}
+
+/* Móvil: texto arriba, iglesia abajo */
 @media (max-width: 768px) {
   .about-content {
     flex-direction: column;
@@ -273,7 +276,7 @@ header {
 .whatsapp-icon {
   width: 16px;
   height: 16px;
-  /* Sin filtro: WhatsApp en verde original */
+  /* WhatsApp en verde original */
 }
 
 footer {
