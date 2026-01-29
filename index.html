@@ -11,28 +11,36 @@
 </head>
 <body>
 
-  <!-- Header Simplificado: Logo y Iconos Sociales -->
+  <!-- Header: Barra fija, corta y elegante -->
   <header class="header">
     <div class="header-container">
+      <!-- Logo izquierda -->
       <a href="#" class="logo-link">
         <img src="icons/logoimpreso.png" alt="Logo Nativo" class="logo">
       </a>
+
+      <!-- Nombre centrado -->
+      <div class="brand">
+        <h1>Nativo</h1>
+      </div>
+
+      <!-- Iconos redes derecha -->
       <div class="social-icons">
-        <a href="https://instagram.com/nativo.st" target="_blank" rel="noopener" aria-label="Instagram Nativo" class="social-link">
+        <a href="https://instagram.com/nativo.st" target="_blank" class="social-link">
           <img src="icons/instagram.png" alt="Instagram" class="social-icon">
         </a>
-        <a href="https://facebook.com/Nativo" target="_blank" rel="noopener" aria-label="Facebook Nativo" class="social-link">
+        <a href="https://facebook.com/Nativo" target="_blank" class="social-link">
           <img src="icons/facebook.png" alt="Facebook" class="social-icon">
         </a>
-        <a href="https://wa.me/52TU-NUMERO-SIN-ESPACIOS" target="_blank" rel="noopener" aria-label="WhatsApp Nativo" class="social-link">
+        <a href="https://wa.me/52TU-NUMERO-SIN-ESPACIOS" target="_blank" class="social-link">
           <img src="icons/whatsapp.png" alt="WhatsApp" class="social-icon">
         </a>
       </div>
     </div>
   </header>
 
-  <!-- Sección Hero: Sin botón, más minimalista -->
-  <section id="hero" class="hero">
+  <!-- Hero con Basílica -->
+  <section class="hero">
     <div class="hero-overlay">
       <div class="hero-content">
         <h1>Nativo</h1>
@@ -42,18 +50,18 @@
     </div>
   </section>
 
-  <!-- Sección Productos: Sin cambios -->
-  <section id="products" class="products">
+  <!-- Productos -->
+  <section class="products">
     <div class="container">
       <h2>Nuestras Camisas</h2>
       <div class="products-grid">
-        <div class="product-card fade-in">
+        <div class="product-card">
           <div class="product-image">
-            <img src="https://images.pexels.com/photos/8217536/pexels-photo-8217536.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Camisa Nativo Blanca" loading="lazy">
+            <img src="https://images.pexels.com/photos/8217536/pexels-photo-8217536.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Camisa Blanca" loading="lazy">
           </div>
           <div class="product-details">
             <h3>Camisa Blanca</h3>
-            <p>Boxy fit relajado · 240g algodón premium<br>Tallas: consulta disponibilidad por WhatsApp</p>
+            <p>Boxy fit relajado · 240g algodón premium<br>Tallas: consulta por WhatsApp</p>
             <p class="price">$480</p>
             <a href="#" class="btn-whatsapp" data-product="Camisa Blanca Nativo - $480">
               <img src="icons/whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
@@ -61,13 +69,14 @@
             </a>
           </div>
         </div>
-        <div class="product-card fade-in">
+
+        <div class="product-card">
           <div class="product-image">
-            <img src="https://images.pexels.com/photos/6786611/pexels-photo-6786611.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Camisa Nativo Arena" loading="lazy">
+            <img src="https://images.pexels.com/photos/6786611/pexels-photo-6786611.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Camisa Arena" loading="lazy">
           </div>
           <div class="product-details">
             <h3>Camisa Arena</h3>
-            <p>Tono neutro premium · Corte boxy contemporáneo<br>Tallas: consulta disponibilidad por WhatsApp</p>
+            <p>Tono neutro premium · Corte boxy contemporáneo<br>Tallas: consulta por WhatsApp</p>
             <p class="price">$480</p>
             <a href="#" class="btn-whatsapp" data-product="Camisa Arena Nativo - $480">
               <img src="icons/whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
@@ -75,12 +84,12 @@
             </a>
           </div>
         </div>
-        <!-- Agrega más productos aquí -->
+
+        <!-- Agrega más aquí -->
       </div>
     </div>
   </section>
 
-  <!-- Footer Sin Cambios -->
   <footer class="footer">
     <div class="container">
       <p>Nativo · Orgullosamente de San Juan de los Lagos, Jalisco</p>
@@ -89,9 +98,8 @@
   </footer>
 
   <script>
-    const phoneNumber = "52TU-NUMERO-SIN-ESPACIOS"; // ¡Cámbialo por tu número real!
+    const phoneNumber = "52TU-NUMERO-SIN-ESPACIOS";
 
-    // WhatsApp
     document.querySelectorAll('.btn-whatsapp').forEach(btn => {
       btn.addEventListener('click', e => {
         e.preventDefault();
@@ -101,16 +109,6 @@
         window.open(url, '_blank');
       });
     });
-
-    // Animaciones de fade-in al scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    });
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
