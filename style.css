@@ -79,6 +79,27 @@ body {
   height: 20px;
 }
 
+/* Desktop: Header más prominente */
+@media (min-width: 1024px) {
+  .header-container {
+    padding: 1.5rem 2rem;
+  }
+  .logo {
+    max-width: 80px;
+  }
+  .social-icons {
+    gap: 1.5rem;
+  }
+  .social-link {
+    width: 50px;
+    height: 50px;
+  }
+  .social-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
 /* Móvil: Iconos más pequeños y alineados */
 @media (max-width: 768px) {
   .header-container {
@@ -133,6 +154,21 @@ body {
   color: var(--color-gris-claro);
   max-width: 600px;
   margin: 0 auto 2rem;
+}
+
+/* Desktop: Hero más impactante */
+@media (min-width: 1024px) {
+  .hero-overlay {
+    background: linear-gradient(135deg, rgba(211, 47, 47, 0.5), rgba(0, 0, 0, 0.6)); /* Menos opaco para mostrar más imagen */
+    padding: 4rem;
+  }
+  .hero-content h1 {
+    font-size: 5rem;
+  }
+  .hero-content p {
+    font-size: 1.8rem;
+    max-width: 800px;
+  }
 }
 
 /* Móvil: Hero más compacto */
@@ -251,6 +287,41 @@ body {
   height: 18px;
 }
 
+/* Desktop: Grid de 3 columnas para aprovechar espacio */
+@media (min-width: 1024px) {
+  .products h2 {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+  }
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+  .product-image img {
+    height: 300px;
+  }
+  .product-details h3 {
+    font-size: 1.8rem;
+  }
+  .product-details p {
+    font-size: 1.1rem;
+  }
+  .price {
+    font-size: 2rem;
+  }
+  .btn-whatsapp {
+    font-size: 1.1rem;
+    padding: 1.2rem 2.5rem;
+  }
+}
+
+/* Pantallas ultra-anchas: 4 columnas */
+@media (min-width: 1440px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 /* Móvil: Grid de 1 columna */
 @media (max-width: 768px) {
   .products-grid {
@@ -283,4 +354,14 @@ body {
 .footer p {
   margin: 0.5rem 0;
   font-size: 1rem;
+}
+
+/* Desktop: Footer más amplio */
+@media (min-width: 1024px) {
+  .footer {
+    padding: 4rem 2rem;
+  }
+  .footer p {
+    font-size: 1.2rem;
+  }
 }
