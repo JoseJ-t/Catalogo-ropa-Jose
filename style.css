@@ -6,15 +6,15 @@
 
 body {
   font-family: 'Inter', system-ui, sans-serif;
-  background: #ffffff;
+  background: #f8f9fa; /* Fondo gris claro para un look más moderno */
   color: #111111;
   line-height: 1.6;
 }
 
 /* Header horizontal, corto y ancho */
 header {
-  background: #ffffff;
-  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 100%); /* Gradiente sutil azul-blanco */
+  padding: 1.2rem 2rem; /* Un poco menos de padding para compactar */
   border-bottom: 1px solid #e5e5e5;
   position: sticky;
   top: 0;
@@ -37,7 +37,7 @@ header {
 }
 
 .logo {
-  max-width: 140px;           /* Tamaño razonable para no amontonar */
+  max-width: 120px; /* Más pequeño para no amontonar */
   height: auto;
   display: block;
 }
@@ -49,33 +49,33 @@ header {
 }
 
 .brand-name h1 {
-  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-size: clamp(1.8rem, 4vw, 2.8rem); /* Un poco más pequeño */
   font-weight: 700;
   margin-bottom: 0.3rem;
   color: #000000;
 }
 
 .brand-name p {
-  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+  font-size: clamp(0.9rem, 2vw, 1rem); /* Ajustado para mejor legibilidad */
   color: #555;
   font-weight: 300;
 }
 
 .social-links {
   display: flex;
-  gap: 1.2rem;
+  gap: 1rem; /* Menos gap */
   flex-shrink: 0;
 }
 
 .social-icon {
-  width: 32px;
-  height: 32px;
+  width: 24px; /* Más pequeño: de 32px a 24px */
+  height: 24px;
   object-fit: contain;
   transition: transform 0.2s ease;
 }
 
 .social-icon:hover {
-  transform: scale(1.15);
+  transform: scale(1.1); /* Hover más sutil */
 }
 
 /* Contenedor principal y productos */
@@ -87,16 +87,16 @@ header {
 
 .products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-  gap: 4rem 3rem;
-  padding: 4rem 0 6rem;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Un poco más pequeño para mejor ajuste */
+  gap: 3rem 2.5rem; /* Menos gap */
+  padding: 3rem 0 5rem;
 }
 
 /* En celular: 1 columna */
 @media (max-width: 900px) {
   .products {
     grid-template-columns: 1fr;
-    gap: 3.5rem;
+    gap: 2.5rem;
   }
   .header-inner {
     flex-direction: column;
@@ -107,24 +107,24 @@ header {
     justify-content: center;
   }
   header {
-    padding: 1.8rem 1.5rem;
+    padding: 1.5rem 1.5rem;
   }
   .logo {
-    max-width: 120px;
+    max-width: 100px; /* Aún más pequeño en móvil */
   }
 }
 
 .product-card {
   background: #ffffff;
-  border-radius: 16px;
+  border-radius: 20px; /* Más redondeado */
   overflow: hidden;
-  box-shadow: 0 6px 30px rgba(0,0,0,0.08);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* Sombra más suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+  transform: translateY(-8px); /* Menos elevación */
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
 
 .product-image img {
@@ -136,63 +136,63 @@ header {
 }
 
 .product-details {
-  padding: 2.5rem 2rem;
+  padding: 2rem 1.8rem; /* Un poco menos de padding */
   text-align: center;
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 1.6rem; /* Más pequeño */
   font-weight: 600;
   margin-bottom: 1rem;
   color: #000000;
 }
 
 .desc {
-  font-size: 1.1rem;
-  color: #444444;
+  font-size: 1rem; /* Ajustado */
+  color: #666; /* Más gris para mejor contraste */
   margin-bottom: 1.5rem;
 }
 
 .price {
-  font-size: 2.2rem;
+  font-size: 2rem; /* Un poco más pequeño */
   font-weight: 700;
-  color: #c8102e;
+  color: #d32f2f; /* Rojo más vibrante */
   margin-bottom: 1.8rem;
 }
 
 .btn-whatsapp {
   display: inline-flex;
   align-items: center;
-  gap: 0.8rem;
-  background: #c8102e;
+  gap: 0.7rem;
+  background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%); /* Gradiente rojo */
   color: white;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 500;
-  padding: 1.1rem 2.5rem;
+  padding: 1rem 2rem;
   border-radius: 50px;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 16px rgba(200,16,46,0.25);
+  box-shadow: 0 4px 16px rgba(211,47,47,0.3);
 }
 
 .btn-whatsapp:hover {
-  background: #a00d26;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(200,16,46,0.35);
+  background: linear-gradient(135deg, #b71c1c 0%, #8b0000 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(211,47,47,0.4);
 }
 
 .whatsapp-icon {
-  width: 26px;
-  height: 26px;
+  width: 22px; /* Más pequeño: de 26px a 22px */
+  height: 22px;
   object-fit: contain;
 }
 
 footer {
   text-align: center;
-  padding: 4rem 1rem 5rem;
-  background: #000000;
+  padding: 3rem 1rem 4rem;
+  background: linear-gradient(135deg, #000000 0%, #333333 100%); /* Gradiente negro */
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 footer p {
