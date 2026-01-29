@@ -11,11 +11,11 @@
 </head>
 <body>
 
-  <!-- Header dinámico con gradiente -->
+  <!-- Header compacto y negro sólido -->
   <header>
     <div class="header-inner">
       <a href="#" class="logo-link">
-        <img src="icons/logoimpresoR.png" alt="Logo Nativo" class="logo">
+        <img src="icons/logoimpreso.png" alt="Logo Nativo" class="logo">
       </a>
       <div class="brand-name">
         <h1>Nativo</h1>
@@ -30,7 +30,7 @@
           <img src="icons/facebook.png" alt="Facebook" class="social-icon">
           <span class="social-text">Facebook</span>
         </a>
-        <a href="https://wa.me/523951024699" target="_blank" rel="noopener" aria-label="WhatsApp Nativo" class="social-link">
+        <a href="https://wa.me/52TU-NUMERO-SIN-ESPACIOS" target="_blank" rel="noopener" aria-label="WhatsApp Nativo" class="social-link">
           <img src="icons/whatsapp.png" alt="WhatsApp" class="social-icon">
           <span class="social-text">WhatsApp</span>
         </a>
@@ -38,21 +38,21 @@
     </div>
   </header>
 
-  <!-- Sección Sobre Nativo con overlay en imagen -->
+  <!-- Sección Sobre Nativo: texto izquierda, imagen derecha -->
   <section class="about">
     <div class="about-content">
-      <img src="icons/iglesia.png" alt="Basílica de San Juan de los Lagos" class="about-image" loading="lazy">
-      <div class="about-overlay">
+      <div class="about-text">
         <h2>Sobre Nativo</h2>
-        <p>Somos vendedores apasionados por traer la moda contemporánea a San Juan de los Lagos, Jalisco. Nuestras camisas boxy fit de 240g de algodón premium llegan directamente de lugares confiables, ofreciendo comodidad, durabilidad y estilo único. Entregas a domicilio, pago al recibir.</p>
+        <p>Somos revendedores apasionados por traer la moda contemporánea a San Juan de los Lagos, Jalisco. Nuestras camisas boxy fit de 240g de algodón premium llegan directamente de proveedores confiables, ofreciendo comodidad, durabilidad y estilo único. Entregas rápidas en moto, pago al recibir.</p>
       </div>
+      <img src="icons/iglesia.png" alt="Basílica de San Juan de los Lagos" class="about-image" loading="lazy">
     </div>
   </section>
 
   <main class="container">
     <section class="products">
       <h2 class="products-title">Nuestras Camisas</h2>
-      <div class="products-slider">
+      <div class="products-grid">
         <div class="product-card">
           <div class="product-image">
             <img src="https://images.pexels.com/photos/8217536/pexels-photo-8217536.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Camisa Nativo Blanca" loading="lazy">
@@ -83,8 +83,6 @@
         </div>
         <!-- Agrega más productos aquí -->
       </div>
-      <button class="slider-btn prev">&lt;</button>
-      <button class="slider-btn next">&gt;</button>
     </section>
   </main>
 
@@ -94,7 +92,7 @@
   </footer>
 
   <script>
-    const phoneNumber = "523951024699"; 
+    const phoneNumber = "52TU-NUMERO-SIN-ESPACIOS"; // ¡Cámbialo por tu número real!
 
     document.querySelectorAll('.btn-whatsapp').forEach(btn => {
       btn.addEventListener('click', e => {
@@ -104,22 +102,6 @@
         const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
         window.open(url, '_blank');
       });
-    });
-
-    // Slider simple para productos
-    const slider = document.querySelector('.products-slider');
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
-    let scrollAmount = 0;
-
-    nextBtn.addEventListener('click', () => {
-      scrollAmount += 320;
-      slider.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-    });
-
-    prevBtn.addEventListener('click', () => {
-      scrollAmount -= 320;
-      slider.scrollTo({ left: scrollAmount, behavior: 'smooth' });
     });
   </script>
 </body>
