@@ -11,55 +11,53 @@
 </head>
 <body>
 
-  <!-- Header compacto y negro sólido -->
-  <header>
-    <div class="header-inner">
+  <!-- Header Moderno y Minimalista -->
+  <header class="header">
+    <div class="header-container">
       <a href="#" class="logo-link">
         <img src="icons/logoimpreso.png" alt="Logo Nativo" class="logo">
       </a>
-      <div class="brand-name">
-        <h1>Nativo</h1>
-        <p>Camisas boxy fit · 240 gramos · Esencia de San Juan de los Lagos</p>
-      </div>
-      <div class="social-links">
-        <a href="https://instagram.com/nativo.st" target="_blank" rel="noopener" aria-label="Instagram Nativo" class="social-link">
-          <img src="icons/instagram.png" alt="Instagram" class="social-icon">
-          <span class="social-text">Instagram</span>
-        </a>
-        <a href="https://facebook.com/Nativo" target="_blank" rel="noopener" aria-label="Facebook Nativo" class="social-link">
-          <img src="icons/facebook.png" alt="Facebook" class="social-icon">
-          <span class="social-text">Facebook</span>
-        </a>
-        <a href="https://wa.me/52TU-NUMERO-SIN-ESPACIOS" target="_blank" rel="noopener" aria-label="WhatsApp Nativo" class="social-link">
-          <img src="icons/whatsapp.png" alt="WhatsApp" class="social-icon">
-          <span class="social-text">WhatsApp</span>
-        </a>
-      </div>
+      <nav class="nav">
+        <button class="menu-toggle" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-list">
+          <li><a href="#hero">Inicio</a></li>
+          <li><a href="#products">Productos</a></li>
+          <li><a href="https://instagram.com/nativo.st" target="_blank">Instagram</a></li>
+          <li><a href="https://facebook.com/Nativo" target="_blank">Facebook</a></li>
+          <li><a href="https://wa.me/52TU-NUMERO-SIN-ESPACIOS" target="_blank">WhatsApp</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
-  <!-- Sección Sobre Nativo: texto izquierda, imagen derecha -->
-  <section class="about">
-    <div class="about-content">
-      <div class="about-text">
-        <h2>Sobre Nativo</h2>
-        <p>Somos revendedores apasionados por traer la moda contemporánea a San Juan de los Lagos, Jalisco. Nuestras camisas boxy fit de 240g de algodón premium llegan directamente de proveedores confiables, ofreciendo comodidad, durabilidad y estilo único. Entregas rápidas en moto, pago al recibir.</p>
+  <!-- Sección Hero: Imagen de fondo con overlay minimalista -->
+  <section id="hero" class="hero">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1>Nativo</h1>
+        <p>Camisas boxy fit · 240 gramos · Esencia de San Juan de los Lagos</p>
+        <p>Somos revendedores apasionados por traer la moda contemporánea a San Juan de los Lagos, Jalisco. Nuestras camisas de algodón premium ofrecen comodidad, durabilidad y estilo único. Entregas rápidas en moto, pago al recibir.</p>
+        <a href="#products" class="btn-primary">Ver Productos</a>
       </div>
-      <img src="icons/iglesia.png" alt="Basílica de San Juan de los Lagos" class="about-image" loading="lazy">
     </div>
   </section>
 
-  <main class="container">
-    <section class="products">
-      <h2 class="products-title">Nuestras Camisas</h2>
+  <!-- Sección Productos: Grid moderno con animaciones -->
+  <section id="products" class="products">
+    <div class="container">
+      <h2>Nuestras Camisas</h2>
       <div class="products-grid">
-        <div class="product-card">
+        <div class="product-card fade-in">
           <div class="product-image">
             <img src="https://images.pexels.com/photos/8217536/pexels-photo-8217536.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Camisa Nativo Blanca" loading="lazy">
           </div>
           <div class="product-details">
             <h3>Camisa Blanca</h3>
-            <p class="desc">Boxy fit relajado · 240g algodón premium<br>Tallas: consulta disponibilidad por WhatsApp</p>
+            <p>Boxy fit relajado · 240g algodón premium<br>Tallas: consulta disponibilidad por WhatsApp</p>
             <p class="price">$480</p>
             <a href="#" class="btn-whatsapp" data-product="Camisa Blanca Nativo - $480">
               <img src="icons/whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
@@ -67,13 +65,13 @@
             </a>
           </div>
         </div>
-        <div class="product-card">
+        <div class="product-card fade-in">
           <div class="product-image">
             <img src="https://images.pexels.com/photos/6786611/pexels-photo-6786611.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Camisa Nativo Arena" loading="lazy">
           </div>
           <div class="product-details">
             <h3>Camisa Arena</h3>
-            <p class="desc">Tono neutro premium · Corte boxy contemporáneo<br>Tallas: consulta disponibilidad por WhatsApp</p>
+            <p>Tono neutro premium · Corte boxy contemporáneo<br>Tallas: consulta disponibilidad por WhatsApp</p>
             <p class="price">$480</p>
             <a href="#" class="btn-whatsapp" data-product="Camisa Arena Nativo - $480">
               <img src="icons/whatsapp.png" alt="WhatsApp" class="whatsapp-icon">
@@ -83,17 +81,29 @@
         </div>
         <!-- Agrega más productos aquí -->
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer>
-    <p>Nativo · Orgullosamente de San Juan de los Lagos, Jalisco</p>
-    <p>Entregas en moto · Pago en efectivo al recibir</p>
+  <!-- Footer Minimalista con Gradiente -->
+  <footer class="footer">
+    <div class="container">
+      <p>Nativo · Orgullosamente de San Juan de los Lagos, Jalisco</p>
+      <p>Entregas en moto · Pago en efectivo al recibir</p>
+    </div>
   </footer>
 
   <script>
     const phoneNumber = "52TU-NUMERO-SIN-ESPACIOS"; // ¡Cámbialo por tu número real!
 
+    // Menú hamburguesa
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navList = document.querySelector('.nav-list');
+    menuToggle.addEventListener('click', () => {
+      navList.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+
+    // WhatsApp
     document.querySelectorAll('.btn-whatsapp').forEach(btn => {
       btn.addEventListener('click', e => {
         e.preventDefault();
@@ -103,6 +113,16 @@
         window.open(url, '_blank');
       });
     });
+
+    // Animaciones de fade-in al scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
