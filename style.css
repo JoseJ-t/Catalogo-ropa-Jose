@@ -43,7 +43,7 @@ header {
 .logo {
   max-width: 70px;
   height: auto;
-  filter: brightness(0) invert(1);
+  /* Quité el filtro para mostrar el logo original con rojo */
 }
 
 .brand-name {
@@ -67,15 +67,15 @@ header {
 
 .social-links {
   display: flex;
-  gap: 1rem; /* Más gap para texto */
+  gap: 1rem;
 }
 
 .social-link {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-decoration: none;
-  color: var(--color-blanco);
+  text-decoration: none; /* Sin subrayado */
+  color: var(--color-blanco); /* Blanco, no azul */
   transition: var(--transition);
 }
 
@@ -84,23 +84,25 @@ header {
 }
 
 .social-icon {
-  width: 18px; /* Un poco más grande para visibilidad */
+  width: 18px;
   height: 18px;
-  filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1); /* Iconos sociales en blanco */
   margin-bottom: 0.2rem;
 }
 
 .social-text {
-  font-size: 0.7rem; /* Texto pequeño debajo */
+  font-size: 0.7rem;
   font-weight: 400;
   opacity: 0.8;
+  color: var(--color-blanco); /* Blanco explícito */
 }
 
-/* Nuevo panel: Sobre Nativo */
+/* Panel: Sobre Nativo con más estilo */
 .about {
-  background: var(--color-blanco);
-  padding: 2rem 1.5rem;
+  background: #fafafa; /* Gris muy sutil */
+  padding: 3rem 1.5rem;
   border-bottom: 1px solid #f0f0f0;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Sombra interna sutil */
 }
 
 .about-content {
@@ -108,27 +110,40 @@ header {
   margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
+  position: relative;
+}
+
+.about-content::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--color-rojo); /* Borde rojo a la izquierda */
 }
 
 .about-image {
-  width: 200px;
+  width: 250px; /* Un poco más grande */
   height: auto;
   border-radius: 0;
   object-fit: cover;
+  box-shadow: var(--shadow-light);
 }
 
 .about-text h2 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: var(--color-negro);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: var(--color-rojo); /* Título en rojo */
 }
 
 .about-text p {
-  font-size: 1rem;
-  color: #666666;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  color: #555555;
+  line-height: 1.7;
+  max-width: 500px;
 }
 
 /* Móvil para about */
@@ -136,10 +151,20 @@ header {
   .about-content {
     flex-direction: column;
     text-align: center;
+    gap: 2rem;
+  }
+  .about-content::before {
+    display: none; /* Sin borde en móvil */
   }
   .about-image {
     width: 100%;
     max-width: 300px;
+  }
+  .about-text h2 {
+    font-size: 1.8rem;
+  }
+  .about-text p {
+    font-size: 1rem;
   }
 }
 
