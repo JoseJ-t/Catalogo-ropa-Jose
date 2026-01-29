@@ -7,81 +7,67 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <header>
     <div class="header-content">
       <h1>Nativo</h1>
-      <p>Camisas boxy fit · 240 gramos · Calidad esencial</p>
+      <p>Camisas boxy fit · 240 gramos · Esencia de San Juan</p>
     </div>
   </header>
 
   <main class="container">
     <section class="products">
-      <!-- Camisa 1 - Blanco -->
+      <!-- Camisa ejemplo 1 -->
       <article class="product-card">
         <div class="product-image">
-          <img src="https://images.pexels.com/photos/8217536/pexels-photo-8217536.jpeg" alt="Camisa Nativo Blanca Boxy Fit" loading="lazy">
+          <img src="https://images.pexels.com/photos/8217536/pexels-photo-8217536.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Camisa Nativo Blanca" loading="lazy">
         </div>
         <div class="product-details">
           <h2>Camisa Blanca</h2>
-          <p class="desc">Boxy fit relajado · 240g algodón premium · Corte amplio y contemporáneo</p>
+          <p class="desc">Boxy fit relajado · 240g algodón premium<br>Tallas: consulta disponibilidad por WhatsApp</p>
           <p class="price">$480</p>
           <a href="#" class="btn-whatsapp" data-product="Camisa Blanca Nativo - $480">
-            <span class="icon">WhatsApp</span> Pedir ahora
+            <span class="icon">💬</span> Pedir por WhatsApp
           </a>
         </div>
       </article>
 
-      <!-- Camisa 2 - Beige / Arena -->
+      <!-- Camisa ejemplo 2 -->
       <article class="product-card">
         <div class="product-image">
-          <img src="https://images.pexels.com/photos/6786611/pexels-photo-6786611.jpeg" alt="Camisa Nativo Beige Boxy Fit" loading="lazy">
+          <img src="https://images.pexels.com/photos/6786611/pexels-photo-6786611.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Camisa Nativo Arena" loading="lazy">
         </div>
         <div class="product-details">
           <h2>Camisa Arena</h2>
-          <p class="desc">Tono neutro elegante · 240g de peso medio-alto · Ideal para uso diario premium</p>
+          <p class="desc">Tono neutro premium · Corte boxy contemporáneo<br>Tallas: consulta disponibilidad por WhatsApp</p>
           <p class="price">$480</p>
           <a href="#" class="btn-whatsapp" data-product="Camisa Arena Nativo - $480">
-            <span class="icon">WhatsApp</span> Pedir ahora
+            <span class="icon">💬</span> Pedir por WhatsApp
           </a>
         </div>
       </article>
 
-      <!-- Camisa 3 - Negro (agrega más si tienes) -->
-      <article class="product-card">
-        <div class="product-image">
-          <img src="https://images.pexels.com/photos/6311248/pexels-photo-6311248.jpeg" alt="Camisa Nativo Negra Boxy Fit" loading="lazy">
-        </div>
-        <div class="product-details">
-          <h2>Camisa Negra</h2>
-          <p class="desc">Clásico elevado · Boxy fit oversize · 240g para caída perfecta</p>
-          <p class="price">$480</p>
-          <a href="#" class="btn-whatsapp" data-product="Camisa Negra Nativo - $480">
-            <span class="icon">WhatsApp</span> Pedir ahora
-          </a>
-        </div>
-      </article>
+      <!-- Agrega más camisas copiando el article completo -->
 
-      <!-- Agrega más articles aquí cuando tengas más colores/tipos -->
     </section>
   </main>
 
   <footer>
-    <p>Nativo · San Juan, Jalisco</p>
-    <p>Entregas locales en moto · Pago en efectivo al recibir</p>
+    <p>Nativo · Orgullosamente de San Juan de los Lagos, Jalisco</p>
+    <p>Entregas en moto · Pago en efectivo al recibir</p>
   </footer>
 
   <script>
-    const phoneNumber = "52TU-NUMERO-AQUÍ-SIN-ESPACIOS"; // Cambia por el tuyo real
+    const phoneNumber = "52TU-NUMERO-SIN-ESPACIOS"; // ¡Cambia esto!
 
     document.querySelectorAll('.btn-whatsapp').forEach(btn => {
       btn.addEventListener('click', e => {
         e.preventDefault();
         const product = btn.getAttribute('data-product');
-        const text = `Hola equipo Nativo 👋\nMe interesa:\n${product}\n¿Disponible? ¿Colores y tallas?\nEntrega en San Juan.`;
+        const text = `Hola Nativo 👋\nQuiero la:\n${product}\n¿Tallas disponibles? ¿Cuándo entregan en San Juan?`;
         const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
         window.open(url, '_blank');
       });
