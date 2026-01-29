@@ -31,8 +31,9 @@
     </div>
   </header>
 
-  <!-- Sección Hero: Sin botón, más minimalista -->
+  <!-- Sección Hero: Con parallax sutil -->
   <section id="hero" class="hero">
+    <div class="hero-bg parallax"></div>
     <div class="hero-overlay">
       <div class="hero-content">
         <h1>Nativo</h1>
@@ -42,12 +43,12 @@
     </div>
   </section>
 
-  <!-- Sección Productos: Sin cambios -->
+  <!-- Sección Productos: Con animaciones staggered -->
   <section id="products" class="products">
     <div class="container">
       <h2>Nuestras Camisas</h2>
       <div class="products-grid">
-        <div class="product-card fade-in">
+        <div class="product-card fade-in" style="--delay: 0s;">
           <div class="product-image">
             <img src="https://images.pexels.com/photos/8217536/pexels-photo-8217536.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Camisa Nativo Blanca" loading="lazy">
           </div>
@@ -61,7 +62,7 @@
             </a>
           </div>
         </div>
-        <div class="product-card fade-in">
+        <div class="product-card fade-in" style="--delay: 0.1s;">
           <div class="product-image">
             <img src="https://images.pexels.com/photos/6786611/pexels-photo-6786611.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Camisa Nativo Arena" loading="lazy">
           </div>
@@ -75,7 +76,7 @@
             </a>
           </div>
         </div>
-        <!-- Agrega más productos aquí -->
+        <!-- Agrega más productos aquí con delays incrementales (0.2s, 0.3s, etc.) -->
       </div>
     </div>
   </section>
@@ -87,6 +88,11 @@
       <p>Entregas en moto · Pago en efectivo al recibir</p>
     </div>
   </footer>
+
+  <!-- Botón Flotante de WhatsApp (solo móviles) -->
+  <a href="https://wa.me/52TU-NUMERO-SIN-ESPACIOS" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+    <img src="icons/whatsapp.png" alt="WhatsApp">
+  </a>
 
   <script>
     const phoneNumber = "52TU-NUMERO-SIN-ESPACIOS"; // ¡Cámbialo por tu número real!
@@ -102,11 +108,14 @@
       });
     });
 
-    // Animaciones de fade-in al scroll
+    // Animaciones staggered con delay
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          const delay = entry.target.style.getPropertyValue('--delay') || '0s';
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, parseFloat(delay) * 1000);
         }
       });
     });
