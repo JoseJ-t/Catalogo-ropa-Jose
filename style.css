@@ -265,7 +265,7 @@ body {
 
 .item-media {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 3 / 2;
   background: #0f0f0f;
   display: flex;
   align-items: center;
