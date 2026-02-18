@@ -108,9 +108,10 @@ body {
 
   .header {
     padding: 1rem 4%;
-    background: rgba(10,10,10,0.92);
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    /* Quitamos el background fijo para que sea transparente inicialmente */
+    background: transparent;
+    /* Quitamos el backdrop-filter: none para que scrolled tenga blur */
+    /* (ahora usa el de .header.scrolled) */
   }
 
   .header-inner {
