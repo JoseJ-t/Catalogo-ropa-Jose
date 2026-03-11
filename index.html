@@ -252,131 +252,125 @@
   </div>
 
   <script>
-    const phone = "523951024699";
-
-    document.querySelectorAll('.item').forEach(item => {
-      item.addEventListener('click', e => {
-        console.log('Clic en artículo detectado'); 
-        e.preventDefault();
-        const path360 = item.dataset.path360; 
-        console.log('Ruta 360:', path360); 
-        const title = item.querySelector('h3').textContent;
-        const desc = item.querySelector('.desc').textContent;
-        const price = item.querySelector('.price').textContent;
-        const orderBtn = item.querySelector('.btn');
-        const productData = orderBtn.dataset.product;
-        const imageData = orderBtn.dataset.image;
-
-        document.getElementById('modal-title').textContent = title;
-        document.getElementById('modal-desc').textContent = desc;
-        document.getElementById('modal-price').textContent = price;
-        document.getElementById('modal-order-btn').dataset.product = productData;
-        document.getElementById('modal-order-btn').dataset.image = imageData;
-
-        
-        const imgElement = document.getElementById('360-image');
-        const frenteSrc = item.dataset.frente; 
-        const reversoSrc = item.dataset.reverso; 
-        let currentFrame = 1; 
-        let isDragging = false;
-        let startX = 0;
-        let hasSwitched = false; 
-
-        
-        const updateImage = () => {
-          imgElement.src = currentFrame === 1 ? `${path360}${frenteSrc}` : `${path360}${reversoSrc}`;
-        };
-
-        
-        imgElement.addEventListener('click', (e) => {
-          if (!isDragging) { 
-            currentFrame = currentFrame === 1 ? 2 : 1; 
-            updateImage();
-          }
-        });
-
-        imgElement.addEventListener('mousedown', (e) => {
-          isDragging = true;
-          startX = e.clientX;
-          hasSwitched = false; 
-        });
-
-        
-        imgElement.addEventListener('mousemove', (e) => {
-          if (!isDragging || hasSwitched) return; 
-          const deltaX = e.clientX - startX;
-          const sensitivity = 150; 
-          if (Math.abs(deltaX) > sensitivity) {
-            currentFrame = currentFrame === 1 ? 2 : 1; 
-            updateImage();
-            hasSwitched = true; 
-          }
-        });
-
-        
-        imgElement.addEventListener('mouseup', () => {
-          isDragging = false;
-        });
-
-        imgElement.addEventListener('touchstart', (e) => {
-          isDragging = true;
-          startX = e.touches[0].clientX;
-          hasSwitched = false;
-        });
-
-        imgElement.addEventListener('touchmove', (e) => {
-          if (!isDragging || hasSwitched) return;
-          const deltaX = e.touches[0].clientX - startX;
-          const sensitivity = 150;
-          if (Math.abs(deltaX) > sensitivity) {
-            currentFrame = currentFrame === 1 ? 2 : 1;
-            updateImage();
-            hasSwitched = true;
-          }
-        });
-
-        imgElement.addEventListener('touchend', () => {
-          isDragging = false;
-        });
-
-        updateImage();
-
-        document.getElementById('product-modal').style.display = 'block';
-        console.log('Modal mostrado'); 
-      });
-    });
-
-    document.querySelector('.close').addEventListener('click', () => {
-      document.getElementById('product-modal').style.display = 'none';
-      console.log('Modal cerrado'); 
-    });
-
-    window.addEventListener('click', e => {
-      if (e.target === document.getElementById('product-modal')) {
-        document.getElementById('product-modal').style.display = 'none';
-        console.log('Modal cerrado por clic fuera'); 
-      }
-    });
-
-    document.querySelectorAll('.btn').forEach(el => {
-      el.addEventListener('click', e => {
-        e.stopPropagation(); 
-        e.preventDefault();
-
-        const nombre = el.dataset.product || "Producto Nativo";
-
-        const base = "https://josej-t.github.io/cat-logo-ropa-nativo/";
-
-        const itemPrincipal = el.closest('.item');
-        const rutaImagen = itemPrincipal.querySelector('img').getAttribute('src');
-
-        const fotoLink = base + rutaImagen;
+      const phone = "523951024699";
       
-        const mensaje = `¡Hola! 👋\n\nMe interesa este modelo:\n*${nombre}*\n\nReferencia de la pieza:\n${fotoLink}\n\n¿Tienen tallas disponibles? ✨\n\n *¿Cuándo podrían entregármelo en mi domicilio?*🛵`;
-      
-        window.open(`https://wa.me/${phone}?text=${encodeURIComponent(mensaje)}`, '_blank');
+      // Lógica para el modal (360 grados)
+      document.querySelectorAll('.item').forEach(item => {
+          item.addEventListener('click', e => {
+              e.preventDefault();
+              const path360 = item.dataset.path360;
+              const title = item.querySelector('h3').textContent;
+              const desc = item.querySelector('.desc').textContent;
+              const price = item.querySelector('.price').textContent;
+              const orderBtn = item.querySelector('.btn');
+              const productData = orderBtn.dataset.product;
+              const imageData = orderBtn.dataset.image;
+              
+              document.getElementById('modal-title').textContent = title;
+              document.getElementById('modal-desc').textContent = desc;
+              document.getElementById('modal-price').textContent = price;
+              document.getElementById('modal-order-btn').dataset.product = productData;
+              document.getElementById('modal-order-btn').dataset.image = imageData;
+              
+              const imgElement = document.getElementById('360-image');
+              const frenteSrc = item.dataset.frente;
+              const reversoSrc = item.dataset.reverso;
+              let currentFrame = 1;
+              let isDragging = false;
+              let startX = 0;
+              let hasSwitched = false;
+              
+              const updateImage = () => {
+                  // Aquí se asegura que se cargue la imagen correcta
+                  imgElement.src = currentFrame === 1 ? `${path360}${frenteSrc}` : `${path360}${reversoSrc}`;
+              };
+              
+              // Eventos para girar la imagen (click y arrastre)
+              imgElement.addEventListener('click', (e) => {
+                  if (!isDragging) {
+                      currentFrame = currentFrame === 1 ? 2 : 1;
+                      updateImage();
+                  }
+              });
+              
+              // (El resto de tus eventos de mouse y touch se mantienen igual)
+              imgElement.addEventListener('mousedown', (e) => {
+                  isDragging = true; startX = e.clientX; hasSwitched = false;
+              });
+              imgElement.addEventListener('mousemove', (e) => {
+                  if (!isDragging || hasSwitched) return;
+                  const deltaX = e.clientX - startX;
+                  const sensitivity = 150;
+                  if (Math.abs(deltaX) > sensitivity) {
+                      currentFrame = currentFrame === 1 ? 2 : 1;
+                      updateImage();
+                      hasSwitched = true;
+                  }
+              });
+              imgElement.addEventListener('mouseup', () => isDragging = false);
+              imgElement.addEventListener('touchstart', (e) => {
+                  isDragging = true; startX = e.touches[0].clientX; hasSwitched = false;
+              });
+              imgElement.addEventListener('touchmove', (e) => {
+                  if (!isDragging || hasSwitched) return;
+                  const deltaX = e.touches[0].clientX - startX;
+                  const sensitivity = 150;
+                  if (Math.abs(deltaX) > sensitivity) {
+                      currentFrame = currentFrame === 1 ? 2 : 1;
+                      updateImage();
+                      hasSwitched = true;
+                  }
+              });
+              imgElement.addEventListener('touchend', () => isDragging = false);
+              
+              updateImage();
+              document.getElementById('product-modal').style.display = 'block';
+          });
       });
-    });
+    
+      // Cerrar modal
+      document.querySelector('.close').addEventListener('click', () => {
+          document.getElementById('product-modal').style.display = 'none';
+      });
+      window.addEventListener('click', e => {
+          if (e.target === document.getElementById('product-modal')) {
+              document.getElementById('product-modal').style.display = 'none';
+          }
+      });
+    
+      // --- AQUÍ ESTÁ LA PARTE IMPORTANTE PARA WHATSAPP ---
+      document.querySelectorAll('.btn').forEach(el => {
+          el.addEventListener('click', e => {
+              e.stopPropagation();
+              e.preventDefault();
+              
+              const nombre = el.dataset.product || "Producto Nativo";
+              const base = "https://josej-t.github.io/cat-logo-ropa-nativo/";
+              
+              // 1. Buscamos la imagen principal del item
+              const itemPrincipal = el.closest('.item');
+              const imgElement = itemPrincipal.querySelector('img');
+              
+              // 2. Obtenemos la ruta (ej: "img/camisa.jpg")
+              let rutaImagen = imgElement.getAttribute('src');
+              
+              // 3. Construimos el link completo
+              // Nota: Si tu ruta ya empieza con "/", no necesitas concatenar con base, 
+              // pero si es relativa (ej: img/camisa.jpg), sí necesitas la base.
+              let fotoLink = "";
+              if (rutaImagen.startsWith('http')) {
+                  fotoLink = rutaImagen; // Si ya es un link completo, lo usamos tal cual
+              } else {
+                  fotoLink = base + rutaImagen;
+              }
+              
+              // 4. Creamos el mensaje (CORREGIDO: Se agregaron las comillas invertidas `)
+              const mensaje = `¡Hola! 👋\n\nMe interesa este modelo:\n*${nombre}*\n\nReferencia de la pieza:\n${fotoLink}\n\n¿Tienen tallas disponibles? ✨\n\n *¿Cuándo podrían entregármelo en mi domicilio?*🛵`;
+              
+              // 5. Abrimos WhatsApp
+              window.open(`https://wa.me/${phone}?text=${encodeURIComponent(mensaje)}`, '_blank');
+          });
+      });
   </script>
 </body>
 </html>
